@@ -1,0 +1,691 @@
+<html lang="es-419">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <link rel="icon" href="favicon.ico">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>G3W UNS - Carreras</title>
+
+    <script type="text/javascript" src="/js/guarani_mash.js" charset="iso-8859-1"></script>
+    <script type="text/javascript" src="/js/jquery.ui.touch-punch.min.js"
+        charset="iso-8859-1"></script>
+    <link type="text/css" href="/css/guarani_mash.css" rel="stylesheet">
+    <link type="text/css" href="/css/guarani_mash2.css" rel="stylesheet">
+
+
+    <!--[if lt IE 9]>
+	<script type='text/javascript' src='/guarani3w/_comp/js/html5.js'></script>
+<![endif]-->
+
+
+
+    <script type="text/javascript">
+        var kernel_config = {
+            widget_count: 3,
+            // Stalls js load until all widgets have loaded css and rendered its content
+            stall_js: false,
+            log: true,
+            alias: '/guarani3w',
+            pretty_urls: true,
+            op_default: 'inicio_alumno',
+            op_actual: 'inicio_alumno',
+            historia_activa: false,
+            es_produccion: true
+        };
+        var url_cambio_perfil = "https://g3w.uns.edu.ar/guarani3w/acceso/perfil";
+        var url_cambio_carrera = "https://g3w.uns.edu.ar/guarani3w/acceso/cambiar_carrera";
+
+    </script>
+
+
+    <link href="/guarani3w/_comp/uns01/operaciones/_comun/pagelets/lista_eventos/default.css" rel="stylesheet"
+        class="lazyload" charset="utf-8">
+    <script src="/guarani3w/_comp/uns01/operaciones/_comun/pagelets/lista_eventos/pagelet_lista_eventos.js"
+        class="lazyload" charset="utf-8"></script>
+    <link href="/guarani3w/_comp/uns01/operaciones/_comun/pagelets/lista_mensajes/default.css" rel="stylesheet"
+        class="lazyload" charset="utf-8">
+    <script src="/guarani3w/_comp/uns01/operaciones/_comun/pagelets/lista_mensajes/pagelet_lista_mensajes.js"
+        class="lazyload" charset="utf-8"></script>
+    <link href="/guarani3w/_comp/siu/operaciones/_comun/pagelets/notificaciones/default.css" rel="stylesheet"
+        class="lazyload" charset="utf-8">
+    <link href="/guarani3w/_comp/uns01/operaciones/_comun/pagelets/notificaciones/default.css" rel="stylesheet"
+        class="lazyload" charset="utf-8">
+    <script src="/guarani3w/_comp/uns01/operaciones/_comun/pagelets/notificaciones/pagelet_notificaciones.js"
+        class="lazyload" charset="utf-8"></script>
+</head>
+
+<body style="zoom: 1;">
+    <div id="_msg_placeholder" style="display:none;" class="alert" role="alert"></div>
+    <a class="acchide" href="#kernel_contenido" id="saltar_cppal">Saltar al contenido principal</a>
+    <div class="brand-nav">
+        <div class="container">
+            <div class="row-fluid">
+                <div class="span3">
+                    <a class="brand" href="https://g3w.uns.edu.ar/guarani3w/inicio_alumno">
+                        <h1>
+                            <img style="height: 2.5em;" alt="SIU Guaraní - Sistema de Gestión Academica"
+                                src="/img/logo-transparente_UNS.png">
+                        </h1>
+                    </a>
+                </div>
+
+                <div class="span9">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="navbar user-navbar clearfix">
+                                <ul class="nav pull-right">
+                                    <li class="notificaciones">
+                                        <a href="https://g3w.uns.edu.ar/guarani3w/mensajes"><span
+                                                class="icon-envelope"></span><span class="acchide">Mensajes</span> <span
+                                                id="js-cant-mensajes" class="badge ">0</span></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                                                class="icon-user"></span> LAHUEN MILLANANCO <span
+                                                class="caret"></span><span class="acchide">Desplegar menú
+                                                perfil</span></a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="https://g3w.uns.edu.ar/guarani3w/configuracion"><span
+                                                        class="icon-cog"></span> Configuración</a></li>
+                                            <li><a href="https://g3w.uns.edu.ar/guarani3w/acceso/logout"><span
+                                                        class="icon-off"></span> Cerrar sesión</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div class="form-horizontal carreras">
+                                <div class="pull-right control-group">
+                                    <label for="js-select-carreras" class="control-label">Carrera:</label>
+                                    <div class="controls">
+                                        <div class="input-append">
+                                            <select id="js-select-carreras">
+                                                <optgroup>
+                                                    <option value="118" selected="">
+                                                        (118) ABOGACIA
+                                                    </option>
+                                                    <option value="EXT">
+                                                        (EXT) EXTRACURRICULAR
+                                                    </option>
+                                                    <option value="IDIO">
+                                                        (IDIO) IDIOMAS
+                                                    </option>
+                                                </optgroup>
+                                            </select>
+                                            <!--<a href='https://g3w.uns.edu.ar/guarani3w/inicio_alumno' class="btn">ver todas las carreras</a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar main-nav">
+        <div class="navbar-inner">
+            <div class="container tb-fix-ancho-fijo">
+                <div role="navigation">
+                    <ul id="js-nav" class="nav">
+                        <li>
+                            <a class="brand" href="https://g3w.uns.edu.ar/guarani3w/inicio_alumno">
+                                <img alt="SIU Guaraní - Inicio"
+                                    src="/img/g3w2-icon-homeT.png"></a>
+                        </li>
+                        <li class="dropdown js-menuitem-root">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cursadas <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li id="cursada_inscripcion"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/cursada_inscripcion">Inscripción</a></li>
+                                <li id="cambio_prioridades"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/cambio_prioridades">Prioridades</a></li>
+                            </ul>
+                        </li>
+                        <li id="examen_inscripcion" class="js-menuitem-root ">
+                            <a href="https://g3w.uns.edu.ar/guarani3w/examen_inscripcion">Exámenes</a>
+                        </li>
+                        <li class="dropdown js-menuitem-root">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ingreso <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li id="cursos_remediales"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/cursos_remediales">Inscripción Cursos
+                                        Nivelación</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown js-menuitem-root">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Matrícula <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li id="reinscripcion"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/reinscripcion">Reinscripción</a></li>
+                                <li id="datos_censales"><a href="https://g3w.uns.edu.ar/guarani3w/datos_censales">Datos
+                                        Censales</a></li>
+                                <li id="turnos_sanidad"><a href="https://g3w.uns.edu.ar/guarani3w/turnos_sanidad">Turnos
+                                        de Sanidad</a></li>
+                                <li id="orient_solicitud"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/orient_solicitud">Elegir Orientación</a>
+                                </li>
+                                <li id="ext_solicitud"><a href="https://g3w.uns.edu.ar/guarani3w/ext_solicitud">Pedido
+                                        de Materias Extracurriculares</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown js-menuitem-root">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Certificaciones <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li id="cert_solicitud"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/cert_solicitud">Solicitud de
+                                        Certificados</a></li>
+                                <li id="cert_consulta"><a href="https://g3w.uns.edu.ar/guarani3w/cert_consulta">Consulta
+                                        / Anulación</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown js-menuitem-root">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Consultas <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li id="historia_academica"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/historia_academica">Historia
+                                        Académica</a></li>
+                                <li id="plan"><a href="https://g3w.uns.edu.ar/guarani3w/plan">Plan del Alumno</a></li>
+                                <li id="actuacion_provisoria_examen"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/actuacion_provisoria_examen">Actuación
+                                        Provisoria de Exámenes</a></li>
+                                <li id="consulta_cursadas"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/consulta_cursadas">Cursadas</a></li>
+                                <li id="consulta_optativas"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/consulta_optativas">Optativas</a></li>
+                                <li id="inscripciones"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/inscripciones">Inscripciones</a></li>
+                                <li id="reinscripciones"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/reinscripciones">Reinscripciones a
+                                        Carreras</a></li>
+                                <li id="datos_personales"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/datos_personales">Datos Personales</a>
+                                </li>
+                                <li id="resultados_sanidad"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/resultados_sanidad">Resultado de los
+                                        Exámenes de Aptitud Física</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown js-menuitem-root">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Servicios <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li id="boleto_estudiantil"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/boleto_estudiantil">Boleto
+                                        Estudiantil</a></li>
+                                <li id="calendario_academico"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/calendario_academico">Calendario
+                                        Académico</a></li>
+                                <li id="encuestas_asignaturas"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/encuestas_asignaturas">Encuestas
+                                        Asignaturas</a></li>
+                                <li id="dpto_sanidad"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/dpto_sanidad">Departamento de Sanidad</a>
+                                </li>
+                                <li id="claves_biblioteca"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/claves_biblioteca">Claves Bibliotecas
+                                        Digitales</a></li>
+                                <li id="reclamos_regulares"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/reclamos_regulares">Reclamos Alumnos
+                                        Regulares</a></li>
+                                <li id="junta_electoral"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/junta_electoral">Junta Electoral -
+                                        Padrones</a></li>
+                                <li id="presupuesto_participativo"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/presupuesto_participativo">Presupuesto
+                                        Participativo - Código Votación</a></li>
+                                <li id="correo_alumnos"><a href="https://g3w.uns.edu.ar/guarani3w/correo_alumnos">Correo
+                                        Institucional Alumnos</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown js-menuitem-root">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Egresados <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li id="tit_solicitud"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/tit_solicitud">Solicitud de Títulos</a>
+                                </li>
+                                <li id="consulta_estado_tramite"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/consulta_estado_tramite">Consulta
+                                        Solicitudes en Trámite</a></li>
+                                <li id="tit_invitacion"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/tit_invitacion">Confirmar Asistencia a
+                                        Colación</a></li>
+                                <li id="consulta_tit_invitacion"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/consulta_tit_invitacion">Consulta
+                                        Confirmaciones a Colación</a></li>
+                                <li id="tit_arancel"><a href="https://g3w.uns.edu.ar/guarani3w/tit_arancel">Información
+                                        de Arancel de Legalización</a></li>
+                                <li id="curriculum_vitae"><a
+                                        href="https://g3w.uns.edu.ar/guarani3w/curriculum_vitae">Curriculum Vitae</a>
+                                </li>
+                                <li id="reclamos"><a href="https://g3w.uns.edu.ar/guarani3w/reclamos">Reclamos</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown js-menuitem-root">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Moodle <span
+                                    class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li id="catedras"><a href="https://g3w.uns.edu.ar/guarani3w/catedras">Acceder a
+                                        Moodle-UNS</a></li>
+                                <li id="mail_moodle"><a href="https://g3w.uns.edu.ar/guarani3w/mail_moodle">Cambiar mail
+                                        para Moodle-UNS</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div><!--/.nav-collapse -->
+            </div><!-- container-fluid -->
+        </div><!-- navbar-inner -->
+    </div><!-- navbar -->
+    <div id="loading_top" style="background: none; border: none; top: 0px; left: 936px; display: none;">
+        <img src="/img/cargando.gif" alt="cargando...">
+    </div>
+    <div id="loading" style="display: none;"></div>
+    <div id="kernel_contenido" role="main" class="container">
+
+        <div class="titulo_operacion row-fluid">
+            <div class="span12">
+                <h2>Bienvenido </h2>
+            </div>
+        </div>
+
+        <div id="layout_dos_columnas" class="row-fluid">
+            <div id="columna_1" class="span9">
+                <div class="row-fluid">
+                    <div class="">
+                        <div id="lista_eventos" class="pagelet" style="display: block; clear: both;"></div>
+                    </div>
+                    <div class="">
+                        <div id="lista_mensajes" class="pagelet" style="display: block; clear: both;"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="columna_2" class="span3">
+                <div id="wrapper-derecha-home">
+                    <div id="notificaciones" aria-live="polite" class="pagelet" style="display: block; clear: both;">
+                        <div class="">
+                            <a href="https://uns.edu.ar/academicas/calendario-academico" class="js-new-tab">Calendario
+                                Académico</a>
+                        </div>
+                        <br>
+                        <a href="/guarani3w/configuracion"><b style="color:red; font-style:italic;">Actualizá tu MAIL
+                            </b></a>
+                        <br>
+
+                        <h3>Cursadas</h3>
+
+                        <select id="id_cursadas_periodos" class="span12">
+                            <option value="2023|Segundo Cuatrimestre">2023 - Segundo Cuatr.</option>
+                            <option value="2023|Primer Cuatrimestre">2023 - Primer Cuatr.</option>
+                            <option value="2023|Anual">2023 - Anual</option>
+                            <option value="2023|Semanal">2023 - Semanal</option>
+                            <option value="2023|Curso de verano">2023 - Curso de verano</option>
+                            <option value="2023|Nivelación">2023 - Nivelación</option>
+                            <option value="2023|Curso Comp. verano">2023 - Curso Comp. verano</option>
+                            <option value="2023|Nivelación II">2023 - Nivelación II</option>
+                            <option value="2022|Segundo Cuatrimestre">2022 - Segundo Cuatr.</option>
+                            <option value="2022|Primer Cuatrimestre">2022 - Primer Cuatr.</option>
+                            <option value="2022|Anual">2022 - Anual</option>
+                            <option value="2022|Semanal">2022 - Semanal</option>
+                            <option value="2022|Curso de verano">2022 - Curso de verano</option>
+                            <option value="2022|Nivelación II">2022 - Nivelación II</option>
+                            <option value="2022|Curso Comp. verano">2022 - Curso Comp. verano</option>
+                            <option value="2022|Nivelación">2022 - Nivelación</option>
+                        </select>
+                        <div id="id_cursadas_periodos_detalle" class="">
+                            <div class="cursadas_periodos_detalle" data-periodo-lectivo="2023|Segundo Cuatrimestre"
+                                style="display: block;">
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Clases: 14/08/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Clases: 01/12/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Inscripciones:
+                                    31/07/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Inscripciones: 30/08/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Correlativas hasta:
+                                    15/09/2023</span><br>
+                            </div>
+                            <div class="cursadas_periodos_detalle" data-periodo-lectivo="2023|Primer Cuatrimestre"
+                                style="display: none;">
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Clases: 13/03/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Clases: 30/06/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Inscripciones:
+                                    06/03/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Inscripciones: 30/03/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Correlativas hasta:
+                                    14/04/2023</span><br>
+                            </div>
+                            <div class="cursadas_periodos_detalle" data-periodo-lectivo="2023|Anual"
+                                style="display: none;">
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Clases: 13/03/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Clases: 01/12/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Inscripciones:
+                                    06/03/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Inscripciones: 30/03/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Correlativas hasta:
+                                    14/04/2023</span><br>
+                            </div>
+                            <div class="cursadas_periodos_detalle" data-periodo-lectivo="2023|Semanal"
+                                style="display: none;">
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Clases: Definido
+                                    p/Dpto.</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Clases: Definido p/Dpto.</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Inscripciones: ---</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Inscripciones: ---</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Correlativas hasta: ---</span><br>
+                            </div>
+                            <div class="cursadas_periodos_detalle" data-periodo-lectivo="2023|Curso de verano"
+                                style="display: none;">
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Clases: 23/01/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Clases: 06/03/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Inscripciones:
+                                    12/12/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Inscripciones: 21/12/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Correlativas hasta: ---</span><br>
+                            </div>
+                            <div class="cursadas_periodos_detalle" data-periodo-lectivo="2023|Nivelación"
+                                style="display: none;">
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Clases: 23/01/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Clases: 11/03/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Inscripciones:
+                                    23/01/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Inscripciones: 23/01/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Correlativas hasta:
+                                    23/01/2023</span><br>
+                            </div>
+                            <div class="cursadas_periodos_detalle" data-periodo-lectivo="2023|Curso Comp. verano"
+                                style="display: none;">
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Clases: 23/01/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Clases: 09/03/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Inscripciones:
+                                    12/12/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Inscripciones: 21/12/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Correlativas hasta:
+                                    09/03/2023</span><br>
+                            </div>
+                            <div class="cursadas_periodos_detalle" data-periodo-lectivo="2023|Nivelación II"
+                                style="display: none;">
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Clases: 29/05/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Clases: 14/07/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Inscripciones:
+                                    24/05/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Inscripciones: 24/09/2023</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Correlativas hasta:
+                                    14/07/2023</span><br>
+                            </div>
+                            <div class="cursadas_periodos_detalle" data-periodo-lectivo="2022|Segundo Cuatrimestre"
+                                style="display: none;">
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Clases: 16/08/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Clases: 02/12/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Inscripciones:
+                                    01/08/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Inscripciones: 31/08/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Correlativas hasta:
+                                    03/10/2022</span><br>
+                            </div>
+                            <div class="cursadas_periodos_detalle" data-periodo-lectivo="2022|Primer Cuatrimestre"
+                                style="display: none;">
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Clases: 14/03/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Clases: 01/07/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Inscripciones:
+                                    07/03/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Inscripciones: 31/03/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Correlativas hasta:
+                                    20/04/2022</span><br>
+                            </div>
+                            <div class="cursadas_periodos_detalle" data-periodo-lectivo="2022|Anual"
+                                style="display: none;">
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Clases: 14/03/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Clases: 02/12/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Inscripciones:
+                                    07/03/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Inscripciones: 31/03/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Correlativas hasta:
+                                    20/04/2022</span><br>
+                            </div>
+                            <div class="cursadas_periodos_detalle" data-periodo-lectivo="2022|Semanal"
+                                style="display: none;">
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Clases: Definido
+                                    p/Dpto.</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Clases: Definido p/Dpto.</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Inscripciones: ---</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Inscripciones: ---</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Correlativas hasta: ---</span><br>
+                            </div>
+                            <div class="cursadas_periodos_detalle" data-periodo-lectivo="2022|Curso de verano"
+                                style="display: none;">
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Clases: 24/01/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Clases: 10/03/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Inscripciones:
+                                    20/12/2021</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Inscripciones: 29/12/2021</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Correlativas hasta: ---</span><br>
+                            </div>
+                            <div class="cursadas_periodos_detalle" data-periodo-lectivo="2022|Nivelación II"
+                                style="display: none;">
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Clases: 30/05/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Clases: 15/07/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Inscripciones:
+                                    30/05/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Inscripciones: 30/09/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Correlativas hasta:
+                                    15/07/2022</span><br>
+                            </div>
+                            <div class="cursadas_periodos_detalle" data-periodo-lectivo="2022|Curso Comp. verano"
+                                style="display: none;">
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Clases: 24/01/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Clases: 10/03/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Inscripciones:
+                                    20/12/2021</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Inscripciones: 29/12/2021</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Correlativas hasta:
+                                    10/03/2022</span><br>
+                            </div>
+                            <div class="cursadas_periodos_detalle" data-periodo-lectivo="2022|Nivelación"
+                                style="display: none;">
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Clases: 24/01/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Clases: 11/03/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Inicio Inscripciones:
+                                    24/01/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Fin Inscripciones: 24/01/2022</span><br>
+                                <span class="cursadas_periodos_detalle_renglon">Correlativas hasta:
+                                    24/01/2022</span><br>
+                            </div>
+                        </div>
+
+                        <h4>Inscripciones</h4>
+                        <ul id="id_cursadas_inscripciones" class="unstyled">
+                        </ul>
+                        <div id="id_cursadas_sin_inscripciones" class="">
+                            No tenés incripciones a cursadas vigentes para el período lectivo y la carrera
+                            seleccionados.
+                        </div>
+
+                        <div id="id_cursadas_mensajes"></div>
+                        <hr>
+                        <h3>Exámenes</h3>
+
+                        <select id="id_examenes_turnos" class="span12">
+                            <option value="2023|2023-11">Turno 2023-11</option>
+                            <option value="2023|2023-10">Turno 2023-10</option>
+                            <option value="2023|2023-09">Turno 2023-09</option>
+                            <option value="2023|2023-08">Turno 2023-08</option>
+                            <option value="2023|2023-07">Turno 2023-07</option>
+                            <option value="2023|2023-06">Turno 2023-06</option>
+                            <option value="2023|2023-05">Turno 2023-05</option>
+                            <option value="2023|2023-04">Turno 2023-04</option>
+                            <option value="2023|2023-03">Turno 2023-03</option>
+                            <option value="2023|2023-02">Turno 2023-02</option>
+                            <option value="2022|2022-7">Turno 2022-07</option>
+                            <option value="2022|2022-6">Turno 2022-06</option>
+                            <option value="2022|2022-12">Turno 2022-12</option>
+                            <option value="2022|2022-11">Turno 2022-11</option>
+                            <option value="2022|2022-10">Turno 2022-10</option>
+                            <option value="2022|2022-09">Turno 2022-09</option>
+                            <option value="2022|2022-08">Turno 2022-08</option>
+                            <option value="2022|2022-05">Turno 2022-05</option>
+                            <option value="2022|2022-04">Turno 2022-04</option>
+                            <option value="2022|2022-03">Turno 2022-03</option>
+                            <option value="2022|2022-02">Turno 2022-02</option>
+                        </select>
+                        <div id="id_examenes_turnos_detalle" class="">
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2023|2023-11"
+                                style="display: block;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/11/2023</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 30/11/2023</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2023|2023-10"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/10/2023</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 31/10/2023</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2023|2023-09"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/09/2023</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 30/09/2023</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2023|2023-08"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/08/2023</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 31/08/2023</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2023|2023-07"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/07/2023</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 31/07/2023</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2023|2023-06"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/06/2023</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 30/06/2023</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2023|2023-05"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/05/2023</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 31/05/2023</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2023|2023-04"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/04/2023</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 30/04/2023</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2023|2023-03"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/03/2023</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 31/03/2023</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2023|2023-02"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/02/2023</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 28/02/2023</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2022|2022-7"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/07/2022</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 15/07/2022</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2022|2022-6"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/06/2022</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 30/06/2022</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2022|2022-12"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/12/2022</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 31/12/2022</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2022|2022-11"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/11/2022</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 30/11/2022</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2022|2022-10"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/10/2022</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 31/10/2022</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2022|2022-09"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/09/2022</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 30/09/2022</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2022|2022-08"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/08/2022</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 07/09/2022</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2022|2022-05"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 02/05/2022</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 31/05/2022</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2022|2022-04"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/04/2022</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 30/04/2022</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2022|2022-03"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 02/03/2022</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 31/03/2022</span><br>
+                            </div>
+                            <div id="id" class="examenes_turnos_detalle" data-turno="2022|2022-02"
+                                style="display: none;">
+                                <span class="examenes_turnos_detalle_renglon">Inicio: 01/02/2022</span><br>
+                                <span class="examenes_turnos_detalle_renglon">Fin: 26/02/2022</span><br>
+                            </div>
+                        </div>
+
+                        <h4>Inscripciones</h4>
+                        <ul id="id_examenes_inscripciones" class="unstyled">
+                        </ul>
+                        <div id="id_examenes_sin_inscripciones" class="">
+                            No tenés incripciones a exámenes vigentes para el turno de examen seleccionado.
+                        </div>
+
+                        <div id="id_examenes_mensajes"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script
+            type="text/javascript">kernel.renderer.on_arrival({ "css": ["\/guarani3w\/_comp\/uns01\/operaciones\/_comun\/pagelets\/lista_eventos\/default.css"], "js": ["\/guarani3w\/_comp\/uns01\/operaciones\/_comun\/pagelets\/lista_eventos\/pagelet_lista_eventos.js"], "op": "_comun\/pagelets", "info": { "id": "lista_eventos", "visible": "1", "estado": "inicial", "mensajes": [] }, "content": "", "clase_js": "lista_eventos", "tiene_archivo_js": "1" });</script>
+        <script
+            type="text/javascript">kernel.renderer.on_arrival({ "css": ["\/guarani3w\/_comp\/uns01\/operaciones\/_comun\/pagelets\/lista_mensajes\/default.css"], "js": ["\/guarani3w\/_comp\/uns01\/operaciones\/_comun\/pagelets\/lista_mensajes\/pagelet_lista_mensajes.js"], "op": "_comun\/pagelets", "info": { "id": "lista_mensajes", "visible": "1", "estado": "inicial", "mensajes": [] }, "content": "", "clase_js": "lista_mensajes", "tiene_archivo_js": "1" });</script>
+        <script
+            type="text/javascript">kernel.renderer.on_arrival({ "css": ["\/guarani3w\/_comp\/siu\/operaciones\/_comun\/pagelets\/notificaciones\/default.css", "\/guarani3w\/_comp\/uns01\/operaciones\/_comun\/pagelets\/notificaciones\/default.css"], "js": ["\/guarani3w\/_comp\/uns01\/operaciones\/_comun\/pagelets\/notificaciones\/pagelet_notificaciones.js"], "op": "_comun\/pagelets", "info": { "id": "notificaciones", "visible": "1", "estado": "inicial", "mensajes": [], "url_refrescar": "https:\/\/g3w.uns.edu.ar\/guarani3w\/inicio_alumno\/inscripciones" }, "content": "           <div class=\"\">\n      <a href=\"https:\/\/uns.edu.ar\/academicas\/calendario-academico\" class=\"js-new-tab\">Calendario Acad\u00e9mico<\/a>\n   <\/div>\n\t<br\/>\n   <a href=\"\/guarani3w\/configuracion\" ><b style=\"color:red; font-style:italic;\">Actualiz\u00e1 tu MAIL <\/b><\/a>\n   <br\/>\n   \n         <h3>Cursadas<\/h3>\n\n               <select id='id_cursadas_periodos' class=\"span12\">\n                           <option value='2023|Segundo Cuatrimestre'>2023 - Segundo Cuatr.<\/option>\n                           <option value='2023|Primer Cuatrimestre'>2023 - Primer Cuatr.<\/option>\n                           <option value='2023|Anual'>2023 - Anual<\/option>\n                           <option value='2023|Semanal'>2023 - Semanal<\/option>\n                           <option value='2023|Curso de verano'>2023 - Curso de verano<\/option>\n                           <option value='2023|Nivelaci\u00f3n'>2023 - Nivelaci\u00f3n<\/option>\n                           <option value='2023|Curso Comp. verano'>2023 - Curso Comp. verano<\/option>\n                           <option value='2023|Nivelaci\u00f3n II'>2023 - Nivelaci\u00f3n II<\/option>\n                           <option value='2022|Segundo Cuatrimestre'>2022 - Segundo Cuatr.<\/option>\n                           <option value='2022|Primer Cuatrimestre'>2022 - Primer Cuatr.<\/option>\n                           <option value='2022|Anual'>2022 - Anual<\/option>\n                           <option value='2022|Semanal'>2022 - Semanal<\/option>\n                           <option value='2022|Curso de verano'>2022 - Curso de verano<\/option>\n                           <option value='2022|Nivelaci\u00f3n II'>2022 - Nivelaci\u00f3n II<\/option>\n                           <option value='2022|Curso Comp. verano'>2022 - Curso Comp. verano<\/option>\n                           <option value='2022|Nivelaci\u00f3n'>2022 - Nivelaci\u00f3n<\/option>\n                     <\/select>\n         <div id=\"id_cursadas_periodos_detalle\" class=\"\">\n                           <div class=\"cursadas_periodos_detalle\" data-periodo-lectivo=\"2023|Segundo Cuatrimestre\">\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Clases: 14\/08\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Clases: 01\/12\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Inscripciones: 31\/07\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Inscripciones: 30\/08\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Correlativas hasta: 15\/09\/2023<\/span><br\/>\n                                 <\/div>\n                           <div class=\"cursadas_periodos_detalle\" data-periodo-lectivo=\"2023|Primer Cuatrimestre\">\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Clases: 13\/03\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Clases: 30\/06\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Inscripciones: 06\/03\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Inscripciones: 30\/03\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Correlativas hasta: 14\/04\/2023<\/span><br\/>\n                                 <\/div>\n                           <div class=\"cursadas_periodos_detalle\" data-periodo-lectivo=\"2023|Anual\">\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Clases: 13\/03\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Clases: 01\/12\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Inscripciones: 06\/03\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Inscripciones: 30\/03\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Correlativas hasta: 14\/04\/2023<\/span><br\/>\n                                 <\/div>\n                           <div class=\"cursadas_periodos_detalle\" data-periodo-lectivo=\"2023|Semanal\">\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Clases: Definido p\/Dpto.<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Clases: Definido p\/Dpto.<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Inscripciones: ---<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Inscripciones: ---<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Correlativas hasta: ---<\/span><br\/>\n                                 <\/div>\n                           <div class=\"cursadas_periodos_detalle\" data-periodo-lectivo=\"2023|Curso de verano\">\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Clases: 23\/01\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Clases: 06\/03\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Inscripciones: 12\/12\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Inscripciones: 21\/12\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Correlativas hasta: ---<\/span><br\/>\n                                 <\/div>\n                           <div class=\"cursadas_periodos_detalle\" data-periodo-lectivo=\"2023|Nivelaci\u00f3n\">\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Clases: 23\/01\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Clases: 11\/03\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Inscripciones: 23\/01\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Inscripciones: 23\/01\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Correlativas hasta: 23\/01\/2023<\/span><br\/>\n                                 <\/div>\n                           <div class=\"cursadas_periodos_detalle\" data-periodo-lectivo=\"2023|Curso Comp. verano\">\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Clases: 23\/01\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Clases: 09\/03\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Inscripciones: 12\/12\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Inscripciones: 21\/12\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Correlativas hasta: 09\/03\/2023<\/span><br\/>\n                                 <\/div>\n                           <div class=\"cursadas_periodos_detalle\" data-periodo-lectivo=\"2023|Nivelaci\u00f3n II\">\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Clases: 29\/05\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Clases: 14\/07\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Inscripciones: 24\/05\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Inscripciones: 24\/09\/2023<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Correlativas hasta: 14\/07\/2023<\/span><br\/>\n                                 <\/div>\n                           <div class=\"cursadas_periodos_detalle\" data-periodo-lectivo=\"2022|Segundo Cuatrimestre\">\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Clases: 16\/08\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Clases: 02\/12\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Inscripciones: 01\/08\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Inscripciones: 31\/08\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Correlativas hasta: 03\/10\/2022<\/span><br\/>\n                                 <\/div>\n                           <div class=\"cursadas_periodos_detalle\" data-periodo-lectivo=\"2022|Primer Cuatrimestre\">\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Clases: 14\/03\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Clases: 01\/07\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Inscripciones: 07\/03\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Inscripciones: 31\/03\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Correlativas hasta: 20\/04\/2022<\/span><br\/>\n                                 <\/div>\n                           <div class=\"cursadas_periodos_detalle\" data-periodo-lectivo=\"2022|Anual\">\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Clases: 14\/03\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Clases: 02\/12\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Inscripciones: 07\/03\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Inscripciones: 31\/03\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Correlativas hasta: 20\/04\/2022<\/span><br\/>\n                                 <\/div>\n                           <div class=\"cursadas_periodos_detalle\" data-periodo-lectivo=\"2022|Semanal\">\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Clases: Definido p\/Dpto.<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Clases: Definido p\/Dpto.<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Inscripciones: ---<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Inscripciones: ---<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Correlativas hasta: ---<\/span><br\/>\n                                 <\/div>\n                           <div class=\"cursadas_periodos_detalle\" data-periodo-lectivo=\"2022|Curso de verano\">\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Clases: 24\/01\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Clases: 10\/03\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Inscripciones: 20\/12\/2021<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Inscripciones: 29\/12\/2021<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Correlativas hasta: ---<\/span><br\/>\n                                 <\/div>\n                           <div class=\"cursadas_periodos_detalle\" data-periodo-lectivo=\"2022|Nivelaci\u00f3n II\">\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Clases: 30\/05\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Clases: 15\/07\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Inscripciones: 30\/05\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Inscripciones: 30\/09\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Correlativas hasta: 15\/07\/2022<\/span><br\/>\n                                 <\/div>\n                           <div class=\"cursadas_periodos_detalle\" data-periodo-lectivo=\"2022|Curso Comp. verano\">\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Clases: 24\/01\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Clases: 10\/03\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Inscripciones: 20\/12\/2021<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Inscripciones: 29\/12\/2021<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Correlativas hasta: 10\/03\/2022<\/span><br\/>\n                                 <\/div>\n                           <div class=\"cursadas_periodos_detalle\" data-periodo-lectivo=\"2022|Nivelaci\u00f3n\">\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Clases: 24\/01\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Clases: 11\/03\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Inicio Inscripciones: 24\/01\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Fin Inscripciones: 24\/01\/2022<\/span><br\/>\n                                       <span class=\"cursadas_periodos_detalle_renglon\">Correlativas hasta: 24\/01\/2022<\/span><br\/>\n                                 <\/div>\n                     <\/div>\n\n         <h4>Inscripciones<\/h4>\n         <ul id=\"id_cursadas_inscripciones\" class=\"unstyled\">\n                     <\/ul>\n         <div id=\"id_cursadas_sin_inscripciones\" class=\"\">\n            No ten\u00e9s incripciones a cursadas vigentes para el per\u00edodo lectivo y la carrera seleccionados.\n         <\/div>\n\n            <div id=\"id_cursadas_mensajes\"><\/div>\n      <hr \/>\n         <h3>Ex&aacute;menes<\/h3>\n\n               <select id='id_examenes_turnos' class=\"span12\">\n                           <option value='2023|2023-11'>Turno 2023-11<\/option>\n                           <option value='2023|2023-10'>Turno 2023-10<\/option>\n                           <option value='2023|2023-09'>Turno 2023-09<\/option>\n                           <option value='2023|2023-08'>Turno 2023-08<\/option>\n                           <option value='2023|2023-07'>Turno 2023-07<\/option>\n                           <option value='2023|2023-06'>Turno 2023-06<\/option>\n                           <option value='2023|2023-05'>Turno 2023-05<\/option>\n                           <option value='2023|2023-04'>Turno 2023-04<\/option>\n                           <option value='2023|2023-03'>Turno 2023-03<\/option>\n                           <option value='2023|2023-02'>Turno 2023-02<\/option>\n                           <option value='2022|2022-7'>Turno 2022-07<\/option>\n                           <option value='2022|2022-6'>Turno 2022-06<\/option>\n                           <option value='2022|2022-12'>Turno 2022-12<\/option>\n                           <option value='2022|2022-11'>Turno 2022-11<\/option>\n                           <option value='2022|2022-10'>Turno 2022-10<\/option>\n                           <option value='2022|2022-09'>Turno 2022-09<\/option>\n                           <option value='2022|2022-08'>Turno 2022-08<\/option>\n                           <option value='2022|2022-05'>Turno 2022-05<\/option>\n                           <option value='2022|2022-04'>Turno 2022-04<\/option>\n                           <option value='2022|2022-03'>Turno 2022-03<\/option>\n                           <option value='2022|2022-02'>Turno 2022-02<\/option>\n                     <\/select>\n         <div id=\"id_examenes_turnos_detalle\" class=\"\">\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2023|2023-11\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/11\/2023<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 30\/11\/2023<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2023|2023-10\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/10\/2023<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 31\/10\/2023<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2023|2023-09\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/09\/2023<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 30\/09\/2023<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2023|2023-08\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/08\/2023<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 31\/08\/2023<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2023|2023-07\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/07\/2023<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 31\/07\/2023<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2023|2023-06\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/06\/2023<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 30\/06\/2023<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2023|2023-05\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/05\/2023<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 31\/05\/2023<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2023|2023-04\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/04\/2023<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 30\/04\/2023<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2023|2023-03\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/03\/2023<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 31\/03\/2023<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2023|2023-02\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/02\/2023<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 28\/02\/2023<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2022|2022-7\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/07\/2022<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 15\/07\/2022<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2022|2022-6\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/06\/2022<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 30\/06\/2022<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2022|2022-12\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/12\/2022<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 31\/12\/2022<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2022|2022-11\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/11\/2022<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 30\/11\/2022<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2022|2022-10\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/10\/2022<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 31\/10\/2022<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2022|2022-09\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/09\/2022<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 30\/09\/2022<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2022|2022-08\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/08\/2022<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 07\/09\/2022<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2022|2022-05\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 02\/05\/2022<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 31\/05\/2022<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2022|2022-04\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/04\/2022<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 30\/04\/2022<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2022|2022-03\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 02\/03\/2022<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 31\/03\/2022<\/span><br\/>\n                                 <\/div>\n                           <div id=\"id\" class=\"examenes_turnos_detalle\" data-turno=\"2022|2022-02\">\n                                       <span class=\"examenes_turnos_detalle_renglon\">Inicio: 01\/02\/2022<\/span><br\/>\n                                       <span class=\"examenes_turnos_detalle_renglon\">Fin: 26\/02\/2022<\/span><br\/>\n                                 <\/div>\n                     <\/div>\n\n         <h4>Inscripciones<\/h4>\n         <ul id=\"id_examenes_inscripciones\" class=\"unstyled\">\n                     <\/ul>\n         <div id=\"id_examenes_sin_inscripciones\" class=\"\">\n            No ten\u00e9s incripciones a ex\u00e1menes vigentes para el turno de examen seleccionado.\n         <\/div>\n         \n            <div id=\"id_examenes_mensajes\"><\/div>\n       ", "clase_js": "notificaciones", "tiene_archivo_js": "1" });</script>
+        <script type="text/javascript">kernel_config.pagelet_count = 3</script>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="span6">
+                    <div id="copyleft">
+
+                    </div>
+                </div>
+                <div class="span6">
+                    <div id="copyright">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
